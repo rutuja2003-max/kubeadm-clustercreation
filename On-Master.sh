@@ -39,5 +39,13 @@ apply_cni_and_output_join() {
   echo "Print the join command:"
   cat "$JOIN_OUTPUT"
 }
+#!/bin/bash
+
+POD_CIDR="192.168.0.0/16"
+CALICO_MANIFEST="https://docs.projectcalico.org/manifests/calico.yaml"
+JOIN_OUTPUT="/tmp/kubeadm_join_cmd.sh"
+
+initialize_master
+apply_cni_and_output_join
 
 
